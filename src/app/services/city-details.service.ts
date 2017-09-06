@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { ICityDetails } from './ICityDetails';
+import { ICityDetails } from '../Interfaces/ICityDetails';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 

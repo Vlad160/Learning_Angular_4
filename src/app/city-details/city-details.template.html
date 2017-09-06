@@ -1,2 +1,23 @@
-<h4>cityDetails.title</h4>
-<h5>cityDetails.location_type</h5>
+<div class="container">
+  <div class="row valign-wrapper">
+    <button class="col s2 waves-effect waves-light btn valign-wrapper">Back</button>
+    <div class="center-align col s10"><h4 class="indigo-text">{{cityDetails?.title}}</h4></div>
+  </div>
+  <div class="row">
+    <div class="row col s3" *ngFor="let day of cityDetails?.consolidated_weather">
+      <div class="column card">
+        <div><b>Date: </b> {{day?.created|date}}</div>
+        <div><b>State: </b> {{day?.weather_state_name}}</div>
+        <div><b>Wind direction: </b> {{day?.wind_direction}}</div>
+        <div><b>Wind speed: </b> {{day?.wind_speed| number:'1.2-2'}}</div>
+        <div><b>Min temperature: </b> {{day?.min_temp | number:'1.2-2'}}</div>
+        <div><b>Max temperature: </b> {{day?.max_temp | number:'1.2-2'}}</div>
+        <div><b>Air pressure: </b>{{day?.air_pressure | number:'1.2-2'}}mbar</div>
+        <div><b>Humidity: </b>{{day?.humidity| number:'1.2-2'}}%</div>
+        <div><b>Visibility: </b>{{day?.visibility| number:'1.2-2'}} miles</div>
+        <div><b>Predictability: </b>{{day?.predictability}}%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
