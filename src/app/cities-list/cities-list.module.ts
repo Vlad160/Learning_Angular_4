@@ -12,9 +12,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
   ],
-  providers: [
-    WeatherDetailsService,
-  ],
+  providers: [],
   exports: [CitiesListComponent]
 })
 

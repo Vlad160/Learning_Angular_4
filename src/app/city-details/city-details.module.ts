@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   declarations: [CityDetailsComponent],
 
   providers: [
-    WeatherDetailsService,
+
   ],
 
   imports: [

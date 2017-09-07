@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { StateService, UIRouterModule } from '@uirouter/angular';
+import { UIRouterModule } from '@uirouter/angular';
 import { AppComponent } from './app.component';
 import { CityDetailsModule } from './city-details/city-details.module';
 import { CitiesListModule } from './cities-list/cities-list.module';
 import { AppRoutingModule } from './app-routing.module';
+import { WeatherDetailsService } from './services/weather-details.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
     CitiesListModule,
     UIRouterModule,
   ],
-  providers: [],
+  providers: [WeatherDetailsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {
