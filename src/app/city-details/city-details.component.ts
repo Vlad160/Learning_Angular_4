@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StateService } from '@uirouter/angular';
 import { ICityDetails } from '../Interfaces/ICityDetails';
-import { CityDetailsService } from '../services/city-details.service';
+import { WeatherDetailsService } from '../services/weather-details.service';
 
 @Component({
   selector: 'city-details',
@@ -8,23 +9,17 @@ import { CityDetailsService } from '../services/city-details.service';
 })
 
 export class CityDetailsComponent implements OnInit {
-
   cityDetails: ICityDetails;
 
-  constructor(private cityDetailsService: CityDetailsService) {
-    //Create class that implements interface and make new instance?
-    //Observable?
+  constructor(private weatherService: WeatherDetailsService, private state: StateService) {
   }
 
-  ngOnInit() {
-    this.getCityDetails(44418);
+  async ngOnInit() {
+    this.cityDetails = await this.weatherService.getCityDetails(this.state.params.woeid);
   }
 
-  getCityDetails(woeid: number | string): void {
-    this.cityDetailsService.getCityDetails(woeid)
-      .then((cityDetails: ICityDetails) => {
-        this.cityDetails = cityDetails;
-      });
+  backToMain(): void {
+    this.state.go('cities');
   }
 
 }

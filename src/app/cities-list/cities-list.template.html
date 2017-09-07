@@ -1,1 +1,12 @@
+<div class="center-align">
+  <h1>Cities list</h1>
+  <div class="column">
+    <div *ngFor="let city of citiesList">
+      {{city.title}}
+      {{city.woeid}}
+      <a (click)="getWeatherDetails(city.woeid)" style="cursor: pointer">City Details</a>
+    </div>
+  </div>
+</div>
+
 
