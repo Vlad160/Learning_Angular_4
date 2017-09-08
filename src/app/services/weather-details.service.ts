@@ -31,9 +31,12 @@ export class WeatherDetailsService {
   }
 
   searchCity(queryString: string): Promise<ICity[]> {
-    const url = `${this.apiRoot}/search/?query=${queryString}`;
-    return this.http.get(url)
-      .toPromise()
-      .then(response => response.json() as ICity[]);
+    if (queryString) {
+      const url = `${this.apiRoot}/search/?query=${queryString}`;
+      return this.http.get(url)
+        .toPromise()
+        .then(response => response.json() as ICity[]);
+    }
+    return;
   }
 }

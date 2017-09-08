@@ -1,0 +1,10 @@
+<form>
+  <md-form-field>
+    <input mdInput  placeholder="City" aria-label="City" [mdAutocomplete]="auto" [formControl]="stateControl" [(ngModel)]="selectedCity">
+    <md-autocomplete #auto="mdAutocomplete">
+      <md-option  (onSelectionChange)="selected(city)" *ngFor="let city of foundCities" [value]="city.title">
+        <span>{{ city.title }}</span> |
+      </md-option>
+    </md-autocomplete>
+  </md-form-field>
+</form>

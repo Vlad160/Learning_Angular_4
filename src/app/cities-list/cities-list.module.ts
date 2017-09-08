@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CitiesListComponent } from './cities-list.component';
 import { CommonModule } from '@angular/common';
-import { WeatherDetailsService } from '../services/weather-details.service';
-import { FormsModule } from '@angular/forms';
+import { CitiesSearchModule } from '../cities-search/cities-search.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule,
+    CitiesSearchModule,
   ],
   providers: [],
   exports: [CitiesListComponent]

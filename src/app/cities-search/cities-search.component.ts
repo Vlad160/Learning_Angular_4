@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { WeatherDetailsService } from '../services/weather-details.service';
 import { ICity } from '../Interfaces/ICity';
+import { FormControl } from '@angular/forms';
+import 'rxjs/add/operator/debounceTime';
 
 @Component({
   selector: 'cities-search',
@@ -8,16 +10,29 @@ import { ICity } from '../Interfaces/ICity';
 })
 
 export class CitiesSearchComponent {
-
-  queryString: string;
   foundCities: ICity[];
+  stateControl: FormControl;
+  selectedCity: ICity;
+  @Output() selectedCityEvent: EventEmitter<string> = new EventEmitter();
 
   constructor(private weatherService: WeatherDetailsService) {
+    this.stateControl = new FormControl();
+    this.stateControl.valueChanges
+      .debounceTime(500)
+      .subscribe(query => this.searchCities(query));
   }
 
-  async searchCities(): Promise<void> {
-    const foundCities: ICity[] = await this.weatherService.searchCity(this.queryString);
-    console.log(foundCities);
+  async searchCities(query): Promise<void> {
+    this.foundCities = await this.weatherService.searchCity(query);
+  }
+
+  selected(city: ICity): void {
+    console.log(city.title);
+    this.selectedCityEvent.emit(`${city.woeid}`);
+  }
+
+  displayFn(city: string): void {
+    console.log(city);
   }
 
 }
