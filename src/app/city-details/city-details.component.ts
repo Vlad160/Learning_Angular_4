@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StateService } from '@uirouter/angular';
 import { ICityDetails } from '../Interfaces/ICityDetails';
 import { WeatherDetailsService } from '../services/weather-details.service';
+import { IDayDetails } from '../Interfaces/IDayDetails';
 
 @Component({
   selector: 'city-details',
@@ -10,6 +11,8 @@ import { WeatherDetailsService } from '../services/weather-details.service';
 
 export class CityDetailsComponent implements OnInit {
   cityDetails: ICityDetails;
+  dayDetails: IDayDetails[];
+  loadingDayDetails = false;
 
   constructor(private weatherService: WeatherDetailsService, private state: StateService) {
   }
@@ -20,6 +23,12 @@ export class CityDetailsComponent implements OnInit {
 
   backToMain(): void {
     this.state.go('cities');
+  }
+
+  async getDayDetails(city: ICityDetails): Promise<void> {
+    this.loadingDayDetails = true;
+    this.dayDetails = await this.weatherService.getDateDetails(city.woeid, city.time);
+    this.loadingDayDetails = false;
   }
 
 }

@@ -7,7 +7,7 @@
       <a (click)="getWeatherDetails(city.woeid)" style="cursor: pointer">City Details</a>
     </div>
   </div>
-  <cities-search></cities-search>
+  <cities-search (selectedCity)="getWeatherDetails($event)"></cities-search>
 </div>
 
 

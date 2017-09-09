@@ -1,0 +1,17 @@
+<div class="row" *ngIf="dayDetails">
+  <h5>Day details</h5>
+  <div class="col s4" *ngFor="let day of dayDetails">
+    <div class="column card hoverable">
+      <div><b>Date: </b> {{day.created|date:'short'}}</div>
+      <div><b>State: </b> {{day.weather_state_name}}</div>
+      <div><b>Wind direction: </b> {{day.wind_direction | number:'1.2-2'}}</div>
+      <div><b>Wind speed: </b> {{day.wind_speed | number:'1.2-2'}}</div>
+      <div><b>Min temperature: </b> {{day.min_temp | number:'1.2-2'}}</div>
+      <div><b>Max temperature: </b> {{day.max_temp | number:'1.2-2'}}</div>
+      <div><b>Air pressure: </b>{{day.air_pressure | number:'1.2-2'}} mbar</div>
+      <div><b>Humidity: </b>{{day.humidity| number:'1.2-2'}}%</div>
+      <div><b>Visibility: </b>{{day.visibility| number:'1.2-2'}} miles</div>
+      <div><b>Predictability: </b>{{day.predictability}}%</div>
+    </div>
+  </div>
+</div>

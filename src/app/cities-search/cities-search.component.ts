@@ -12,8 +12,7 @@ import 'rxjs/add/operator/debounceTime';
 export class CitiesSearchComponent {
   foundCities: ICity[];
   stateControl: FormControl;
-  selectedCity: ICity;
-  @Output() selectedCityEvent: EventEmitter<string> = new EventEmitter();
+  @Output() selectedCity: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private weatherService: WeatherDetailsService) {
     this.stateControl = new FormControl();
@@ -27,12 +26,8 @@ export class CitiesSearchComponent {
   }
 
   selected(city: ICity): void {
-    console.log(city.title);
-    this.selectedCityEvent.emit(`${city.woeid}`);
+    this.selectedCity.emit(city.woeid);
   }
 
-  displayFn(city: string): void {
-    console.log(city);
-  }
 
 }

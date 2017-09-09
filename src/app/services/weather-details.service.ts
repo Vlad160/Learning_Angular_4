@@ -5,28 +5,25 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { ICity } from '../Interfaces/ICity';
 import { CITIES } from '../../assets/mock-cities';
+import { IDayDetails } from '../Interfaces/IDayDetails';
+import { DatePipe } from '@angular/common';
 
 @Injectable()
 export class WeatherDetailsService {
 
   private apiRoot = `https://www.metaweather.com/api/location`;
-  private count: number;
 
-  constructor(private http: Http) {
-    this.count = 0;
+  constructor(private http: Http, private datePipe: DatePipe) {
   }
 
   getCityDetails(woeid: number | string): Promise<ICityDetails> {
     const url = `${this.apiRoot}/${woeid}`;
-    console.log(this.count++);
     return this.http.get(url)
       .toPromise()
       .then(response => response.json() as ICityDetails);
-
   }
 
   getCities(): ICity[] {
-    console.log(this.count++);
     return CITIES;
   }
 
@@ -38,5 +35,13 @@ export class WeatherDetailsService {
         .then(response => response.json() as ICity[]);
     }
     return;
+  }
+
+  getDateDetails(woeid: number, day: string): Promise<IDayDetails[]> {
+    const dayTransform = this.datePipe.transform(day, 'yyyy/M/dd');
+    const url = `${this.apiRoot}/location/${woeid}/${dayTransform}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json() as IDayDetails[]);
   }
 }
