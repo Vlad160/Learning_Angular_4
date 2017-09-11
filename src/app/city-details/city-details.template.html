@@ -1,12 +1,11 @@
 <div class="container" *ngIf="cityDetails; else loading">
   <div class="row valign-wrapper">
     <button class="col s2 waves-effect waves-light btn valign-wrapper" (click)="backToMain()">Back</button>
-    <div class="center-align col s10"><h4 class="indigo-text">{{cityDetails.title}}</h4></div>
+    <div class="center-align col s10"><h4 class="indigo-text">{{cityDetails.title}}({{cityDetails.time|date:'short'}})</h4></div>
   </div>
   <div class="row">
     <div class="col s4" (click)="getDayDetails(cityDetails)" *ngFor="let day of cityDetails.consolidated_weather">
       <div class="column card hoverable">
-        <div><b>Date: </b> {{day.created|date:'short'}}</div>
         <div><b>State: </b> {{day.weather_state_name}}</div>
         <div><b>Wind direction: </b> {{day.wind_direction | number:'1.2-2'}}</div>
         <div><b>Wind speed: </b> {{day.wind_speed | number:'1.2-2'}}</div>

@@ -20,7 +20,9 @@ export class WeatherDetailsService {
     const url = `${this.apiRoot}/${woeid}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json() as ICityDetails);
+      .then(response => {
+        return response.json() as ICityDetails;
+      });
   }
 
   getCities(): ICity[] {
@@ -44,4 +46,5 @@ export class WeatherDetailsService {
       .toPromise()
       .then(response => response.json() as IDayDetails[]);
   }
+
 }

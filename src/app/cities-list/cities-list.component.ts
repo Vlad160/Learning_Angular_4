@@ -13,13 +13,12 @@ export class CitiesListComponent {
   citiesList: ICity[];
 
   constructor(private weatherService: WeatherDetailsService, private state: StateService) {
+
     this.citiesList = weatherService.getCities();
   }
 
   getWeatherDetails(woied: number): void {
-    console.log(woied);
     this.state.go('cityDetails', { woeid: woied });
   }
-
 
 }

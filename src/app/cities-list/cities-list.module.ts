@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CitiesListComponent } from './cities-list.component';
 import { CommonModule } from '@angular/common';
 import { CitiesSearchModule } from '../cities-search/cities-search.module';
+import { WeatherDetailsService } from '../services/weather-details.service';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,7 @@ import { CitiesSearchModule } from '../cities-search/cities-search.module';
     CommonModule,
     CitiesSearchModule,
   ],
-  providers: [],
+  providers: [WeatherDetailsService],
   exports: [CitiesListComponent]
 })
 
