@@ -22,7 +22,7 @@ export class CityDetailsComponent implements OnInit {
   }
 
   backToMain(): void {
-    this.state.go('cities');
+    this.state.go('app');
   }
 
   async getDayDetails(city: ICityDetails): Promise<void> {
