@@ -18,7 +18,7 @@ export class CitiesListComponent {
   }
 
   getWeatherDetails(woied: number): void {
-    this.state.go('cityDetails', { woeid: woied });
+    this.state.go('cities.details', { woeid: woied });
   }
 
 }

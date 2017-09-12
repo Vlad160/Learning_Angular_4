@@ -6,18 +6,20 @@ import { MdButtonModule } from '@angular/material';
 import { DateDetailsComponent } from '../date-details/date-details.component';
 import { UIRouterModule } from '@uirouter/angular';
 import { CITY_DETAILS_STATES } from './city-details.states';
-
+import { CityDetailsWoiedComponent } from './city-details-woied.component';
 
 
 @NgModule({
   exports: [
     CityDetailsComponent,
-    DateDetailsComponent
+    DateDetailsComponent,
+    CityDetailsWoiedComponent,
   ],
 
   declarations: [
     CityDetailsComponent,
-    DateDetailsComponent
+    DateDetailsComponent,
+    CityDetailsWoiedComponent,
   ],
 
   providers: [
@@ -27,7 +29,7 @@ import { CITY_DETAILS_STATES } from './city-details.states';
   imports: [
     CommonModule,
     MdButtonModule,
-    UIRouterModule.forChild(CITY_DETAILS_STATES),
+    UIRouterModule.forChild({ states: CITY_DETAILS_STATES }),
   ]
 })
 

@@ -1,18 +1,21 @@
 import { CityDetailsComponent } from './city-details.component';
-import { CitiesListComponent } from '../cities-list/cities-list.component';
 import { Ng2StateDeclaration } from '@uirouter/angular';
+import { CityDetailsWoiedComponent } from './city-details-woied.component';
 
 export const rootCityDetailsStates: Ng2StateDeclaration = {
-  parent: 'app',
   name: 'cities',
   url: '/cities',
   redirectTo: 'app',
+  component: CityDetailsComponent,
 };
 
 export const CityDetailsStates: Ng2StateDeclaration = {
-  name: 'cities.woeid',
+  name: 'cities.details',
   url: '/:woeid',
-  component: CityDetailsComponent,
+  component: CityDetailsWoiedComponent,
+  params: {
+    woeid: null,
+  }
 };
 
 
