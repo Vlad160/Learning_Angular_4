@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '@uirouter/angular';
-import { ICityDetails } from '../Interfaces/ICityDetails';
-import { WeatherDetailsService } from '../services/weather-details.service';
-import { IDayDetails } from '../Interfaces/IDayDetails';
+import { ICityDetails } from '../../shared/Interfaces/ICityDetails';
+import { WeatherDetailsService } from '../../shared/services/weather-details.service';
+import { IDayDetails } from '../../shared/Interfaces/IDayDetails';
 
 @Component({
   selector: 'city-details',

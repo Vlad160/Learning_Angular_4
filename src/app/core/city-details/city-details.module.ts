@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CityDetailsComponent } from './city-details.component';
-import { WeatherDetailsService } from '../services/weather-details.service';
+import { WeatherDetailsService } from '../../shared/services/weather-details.service';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { MdButtonModule } from '@angular/material';
-import { DateDetailsModule } from '../date-details/date-details.module';
+import { DateDetailsComponent } from '../date-details/date-details.component';
 
 @NgModule({
-  exports: [CityDetailsComponent],
+  exports: [
+    CityDetailsComponent,
+    DateDetailsComponent
+  ],
 
-  declarations: [CityDetailsComponent],
+  declarations: [
+    CityDetailsComponent,
+    DateDetailsComponent
+  ],
 
   providers: [
     WeatherDetailsService
@@ -19,7 +25,6 @@ import { DateDetailsModule } from '../date-details/date-details.module';
     HttpModule,
     CommonModule,
     MdButtonModule,
-    DateDetailsModule,
   ]
 })
 

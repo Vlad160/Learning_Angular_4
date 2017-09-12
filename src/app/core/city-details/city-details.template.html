@@ -5,20 +5,15 @@
   </div>
   <div class="row">
     <div class="col s4" (click)="getDayDetails(cityDetails)" *ngFor="let day of cityDetails.consolidated_weather">
-      <div class="column card hoverable">
-        <div><b>State: </b> {{day.weather_state_name}}</div>
-        <div><b>Wind direction: </b> {{day.wind_direction | number:'1.2-2'}}</div>
-        <div><b>Wind speed: </b> {{day.wind_speed | number:'1.2-2'}}</div>
-        <div><b>Min temperature: </b> {{day.min_temp | number:'1.2-2'}}</div>
-        <div><b>Max temperature: </b> {{day.max_temp | number:'1.2-2'}}</div>
-        <div><b>Air pressure: </b>{{day.air_pressure | number:'1.2-2'}} mbar</div>
-        <div><b>Humidity: </b>{{day.humidity| number:'1.2-2'}}%</div>
-        <div><b>Visibility: </b>{{day.visibility| number:'1.2-2'}} miles</div>
-        <div><b>Predictability: </b>{{day.predictability}}%</div>
-      </div>
+      <date-details [dayDetails]="day"></date-details>
     </div>
   </div>
-  <date-details [dayDetails]="dayDetails"></date-details>
+  <div class="row" *ngIf="dayDetails">
+    <h5>Day details</h5>
+    <div class="col s4" *ngFor="let day of dayDetails">
+      <date-details [dayDetails]="day"></date-details>
+    </div>
+  </div>
   <div *ngIf="loadingDayDetails">
     <div class="container">
       <div class="center-align">

@@ -1,4 +1,4 @@
-import { ICity } from '../app/Interfaces/ICity';
+import { ICity } from '../app/shared/Interfaces/ICity';
 
 export const CITIES: ICity[] = [
   { title: 'London', woeid: 44418 },

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { StateService } from '@uirouter/angular';
-import { ICity } from '../Interfaces/ICity';
-import { WeatherDetailsService } from '../services/weather-details.service';
+import { ICity } from '../../shared/Interfaces/ICity';
+import { WeatherDetailsService } from '../../shared/services/weather-details.service';
 
 @Component({
   selector: 'cities-list',

@@ -4,7 +4,7 @@ import { ICityDetails } from '../Interfaces/ICityDetails';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { ICity } from '../Interfaces/ICity';
-import { CITIES } from '../../assets/mock-cities';
+import { CITIES } from '../../../assets/mock-cities';
 import { IDayDetails } from '../Interfaces/IDayDetails';
 import { DatePipe } from '@angular/common';
 

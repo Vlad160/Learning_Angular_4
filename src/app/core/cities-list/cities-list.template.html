@@ -6,8 +6,8 @@
       {{city.woeid}}
       <a (click)="getWeatherDetails(city.woeid)" style="cursor: pointer">City Details</a>
     </div>
+    <cities-search (selectedCity)="getWeatherDetails($event)"></cities-search>
   </div>
-  <cities-search (selectedCity)="getWeatherDetails($event)"></cities-search>
 </div>
 
 

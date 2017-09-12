@@ -1,0 +1,14 @@
+<div class="row" *ngIf="dayDetails">
+    <div class="column card hoverable card-padding">
+      <div><b>Date: </b> {{dayDetails.created|date:'short'}}</div>
+      <div><b>State: </b> {{dayDetails.weather_state_name}}</div>
+      <div><b>Wind direction: </b> {{dayDetails.wind_direction | number:'1.2-2'}}</div>
+      <div><b>Wind speed: </b> {{dayDetails.wind_speed | number:'1.2-2'}}</div>
+      <div><b>Min temperature: </b> {{dayDetails.min_temp | number:'1.2-2'}}</div>
+      <div><b>Max temperature: </b> {{dayDetails.max_temp | number:'1.2-2'}}</div>
+      <div><b>Air pressure: </b>{{dayDetails.air_pressure | number:'1.2-2'}} mbar</div>
+      <div><b>Humidity: </b>{{dayDetails.humidity| number:'1.2-2'}}%</div>
+      <div><b>Visibility: </b>{{dayDetails.visibility| number:'1.2-2'}} miles</div>
+      <div><b>Predictability: </b>{{dayDetails.predictability}}%</div>
+    </div>
+  </div>

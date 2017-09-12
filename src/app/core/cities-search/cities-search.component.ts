@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { WeatherDetailsService } from '../services/weather-details.service';
-import { ICity } from '../Interfaces/ICity';
+import { WeatherDetailsService } from '../../shared/services/weather-details.service';
+import { ICity } from '../../shared/Interfaces/ICity';
 import { FormControl } from '@angular/forms';
 import 'rxjs/add/operator/debounceTime';
 
 @Component({
   selector: 'cities-search',
   templateUrl: './cities-search.template.html',
+  styleUrls: ['./cities-search.component.scss'],
 })
 
 export class CitiesSearchComponent {
@@ -28,6 +29,4 @@ export class CitiesSearchComponent {
   selected(city: ICity): void {
     this.selectedCity.emit(city.woeid);
   }
-
-
 }
