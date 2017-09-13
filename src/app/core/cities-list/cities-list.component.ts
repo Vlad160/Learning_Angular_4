@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { StateService } from '@uirouter/angular';
 import { ICity } from '../../shared/Interfaces/ICity';
-import { WeatherDetailsService } from '../../shared/services/weather-details.service';
+import { WeatherDetailsService } from '../../shared/Services/weather-details.service';
 
 @Component({
   selector: 'cities-list',
@@ -18,7 +18,7 @@ export class CitiesListComponent {
   }
 
   getWeatherDetails(woied: number): void {
-    this.state.go('cities.details', { woeid: woied });
+    this.state.go('cities', { woeid: woied });
   }
 
 }

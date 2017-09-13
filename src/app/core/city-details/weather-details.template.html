@@ -1,20 +1,15 @@
 <div class="container" *ngIf="cityDetails; else loading">
   <div class="row valign-wrapper">
     <button class="col s2 waves-effect waves-light btn valign-wrapper" (click)="backToMain()">Back</button>
-    <div class="center-align col s10"><h4 class="indigo-text">{{cityDetails.title}}({{cityDetails.time|date:'short'}})</h4></div>
+    <div class="center-align col s10"><h4 class="indigo-text">
+      {{cityDetails.title}}({{cityDetails.time|date:'short'}})</h4></div>
   </div>
   <div class="row">
     <div class="col s4" (click)="getDayDetails(cityDetails)" *ngFor="let day of cityDetails.consolidated_weather">
       <date-details [dayDetails]="day"></date-details>
     </div>
   </div>
-  <div class="row" *ngIf="dayDetails">
-    <h5>Day details</h5>
-    <div class="col s4" *ngFor="let day of dayDetails">
-      <date-details [dayDetails]="day"></date-details>
-    </div>
-  </div>
-  <div *ngIf="loadingDayDetails">
+  <div *ngIf="!loadingDayDetails;then dateDetailsTmpl; else loading">
     <div class="container">
       <div class="center-align">
         <div class="preloader-wrapper big active">
@@ -53,4 +48,11 @@
     </div>
   </div>
 </ng-template>
-
+<ng-template #dateDetailsTmpl>
+  <div class="row" *ngIf="dayDetails">
+    <h5>Day details</h5>
+    <div class="col s4" *ngFor="let day of dayDetails">
+      <date-details [dayDetails]="day"></date-details>
+    </div>
+  </div>
+</ng-template>

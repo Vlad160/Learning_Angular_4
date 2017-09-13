@@ -1,18 +1,12 @@
-import { CityDetailsComponent } from './city-details.component';
-import { Ng2StateDeclaration } from '@uirouter/angular';
-import { CityDetailsWoiedComponent } from './city-details-woied.component';
 
-export const rootCityDetailsStates: Ng2StateDeclaration = {
-  name: 'cities',
-  url: '/cities',
-  redirectTo: 'app',
-  component: CityDetailsComponent,
-};
+import { Ng2StateDeclaration } from '@uirouter/angular';
+import { WeatherDetailsComponent } from './weather-details.component';
+
 
 export const CityDetailsStates: Ng2StateDeclaration = {
-  name: 'cities.details',
-  url: '/:woeid',
-  component: CityDetailsWoiedComponent,
+  name: 'cities',
+  url: '/cities/:woeid',
+  component: WeatherDetailsComponent,
   params: {
     woeid: null,
   }
@@ -20,7 +14,6 @@ export const CityDetailsStates: Ng2StateDeclaration = {
 
 
 export const CITY_DETAILS_STATES = [
-  rootCityDetailsStates,
   CityDetailsStates,
 ];
 

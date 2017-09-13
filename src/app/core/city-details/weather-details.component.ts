@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '@uirouter/angular';
 import { ICityDetails } from '../../shared/Interfaces/ICityDetails';
-import { WeatherDetailsService } from '../../shared/services/weather-details.service';
+import { WeatherDetailsService } from '../../shared/Services/weather-details.service';
 import { IDayDetails } from '../../shared/Interfaces/IDayDetails';
 
 @Component({
-  selector: 'city-details-woied',
-  templateUrl: './city-details-woeid.template.html',
+  selector: 'weather-details',
+  templateUrl: './weather-details.template.html',
 })
 
-export class CityDetailsWoiedComponent implements OnInit {
+export class WeatherDetailsComponent implements OnInit {
   cityDetails: ICityDetails;
   dayDetails: IDayDetails[];
   loadingDayDetails = false;

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { WeatherDetailsService } from '../../shared/services/weather-details.service';
+import { WeatherDetailsService } from '../../shared/Services/weather-details.service';
 import { ICity } from '../../shared/Interfaces/ICity';
 import { FormControl } from '@angular/forms';
 import 'rxjs/add/operator/debounceTime';

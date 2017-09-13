@@ -1,6 +1,5 @@
-<div class="row" *ngIf="dayDetails">
+<div *ngIf="dayDetails">
     <div class="column card hoverable card-padding">
-      <div><b>Date: </b> {{dayDetails.created|date:'short'}}</div>
       <div><b>State: </b> {{dayDetails.weather_state_name}}</div>
       <div><b>Wind direction: </b> {{dayDetails.wind_direction | number:'1.2-2'}}</div>
       <div><b>Wind speed: </b> {{dayDetails.wind_speed | number:'1.2-2'}}</div>
