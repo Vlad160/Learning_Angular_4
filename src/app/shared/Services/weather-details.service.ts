@@ -11,7 +11,7 @@ import { DatePipe } from '@angular/common';
 @Injectable()
 export class WeatherDetailsService {
 
-  private apiRoot = `https://www.metaweather.com/api/location`;
+  private apiRoot = `/api/location`;
 
   constructor(private http: Http, private datePipe: DatePipe) {
   }
