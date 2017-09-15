@@ -5,17 +5,17 @@ import { MdButtonModule } from '@angular/material';
 import { DateDetailsComponent } from '../date-details/date-details.component';
 import { UIRouterModule } from '@uirouter/angular';
 import { CITY_DETAILS_STATES } from './city-details.states';
-import { WeatherDetailsComponent } from './weather-details.component';
+import { CityDetailsComponent } from './city-details.component';
 
 @NgModule({
   exports: [
     DateDetailsComponent,
-    WeatherDetailsComponent,
+    CityDetailsComponent,
   ],
 
   declarations: [
     DateDetailsComponent,
-    WeatherDetailsComponent,
+    CityDetailsComponent,
   ],
 
   providers: [

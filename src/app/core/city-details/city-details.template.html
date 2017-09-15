@@ -6,6 +6,7 @@
   </div>
   <div class="row">
     <div class="col s4" (click)="getDayDetails(cityDetails)" *ngFor="let day of cityDetails.consolidated_weather">
+      <div class="center-align">{{day.applicable_date|date:'EEEE d'}}</div>
       <date-details [dayDetails]="day"></date-details>
     </div>
   </div>

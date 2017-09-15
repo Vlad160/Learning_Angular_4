@@ -1,12 +1,12 @@
 
 import { Ng2StateDeclaration } from '@uirouter/angular';
-import { WeatherDetailsComponent } from './weather-details.component';
+import { CityDetailsComponent } from './city-details.component';
 
 
 export const CityDetailsStates: Ng2StateDeclaration = {
   name: 'cities',
   url: '/cities/:woeid',
-  component: WeatherDetailsComponent,
+  component: CityDetailsComponent,
   params: {
     woeid: null,
   }

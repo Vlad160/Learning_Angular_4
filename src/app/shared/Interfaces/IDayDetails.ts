@@ -7,6 +7,7 @@ export interface IDayDetails {
   the_temp: number;
   wind_speed: number;
   wind_direction: number;
+  applicable_date: string;
   air_pressure: number;
   humidity: number;
   visibility: number;

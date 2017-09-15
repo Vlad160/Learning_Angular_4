@@ -1,7 +1,8 @@
 const express = require('express'),
   path = require('path'),
   bodyParser = require('body-parser'),
-  proxy = require('http-proxy-middleware');
+  proxy = require('http-proxy-middleware'),
+  proxy2 = require('express-http-proxy');
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.use('/api/*', proxy({
   target: 'https://www.metaweather.com', changeOrigin: true, logLevel: 'debug'
 }));
 
-app.use('/api/*', proxy('https://www.metaweather.com'));
+// app.use('/api/*', proxy2('https://www.metaweather.com'));
 
 app.use("/", express.static(__dirname + '/dist'));
 

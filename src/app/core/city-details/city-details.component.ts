@@ -5,11 +5,11 @@ import { WeatherDetailsService } from '../../shared/Services/weather-details.ser
 import { IDayDetails } from '../../shared/Interfaces/IDayDetails';
 
 @Component({
-  selector: 'weather-details',
-  templateUrl: './weather-details.template.html',
+  selector: 'city-details',
+  templateUrl: './city-details.template.html',
 })
 
-export class WeatherDetailsComponent implements OnInit {
+export class CityDetailsComponent implements OnInit {
   cityDetails: ICityDetails;
   dayDetails: IDayDetails[];
   loadingDayDetails = false;
